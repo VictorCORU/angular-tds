@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app="angularTds">
-<head>
-    <meta charset="UTF-8">
-    <title>Angular TDs</title>
-</head>
-<body>
-
-</body>
+<html lang="en" data-ng-app="NoteApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular TDs</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script src="js/NoteApp.js"></script>
+        <script src="js/NoteController.js"></script>
+    </head>
+    <body data-ng-controller="NoteController as noteCtrl">
+        <h1> Note </h1>
+        <textarea ng-model="noteCtrl.messageNote" maxlength="100">{{noteCtrl.messageNote}}</textarea><br/>
+        <button>Enregistrer</button> <button ng-click="noteCtrl.clear()" ng-init="noteCtrl.messageNote">Clear</button><br/>
+        <div>Nombre de caractère restant : {{noteCtrl.count()}}</div>
+        <div>
+            {{noteCtrl.status}}
+        </div>
+    </body>
 </html>
