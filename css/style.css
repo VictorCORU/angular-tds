@@ -1,0 +1,20 @@
+.panel {
+    margin-left: 10%;
+    width: 60%;
+}
+
+.panel textarea {
+    width: 90%;
+    height: 250px;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}

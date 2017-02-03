@@ -6,15 +6,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
         <script src="js/NoteApp.js"></script>
         <script src="js/NoteController.js"></script>
-        <script src="css/bootstrap.min.css"></script>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="js/bootstrap.min.js"/>
+        <link rel="stylesheet" href="css/style.css"/>
     </head>
-    <body data-ng-controller="NoteController as noteCtrl">
-        <h1> Note </h1>
-        <textarea ng-model="noteCtrl.messageNote" maxlength="100">{{noteCtrl.messageNote}}</textarea><br/>
-        <button>Enregistrer</button> <button ng-click="noteCtrl.clear()" ng-init="noteCtrl.messageNote">Clear</button><br/>
-        <div>Nombre de caractère restant : {{noteCtrl.count()}}</div>
-        <div>
-            {{noteCtrl.status}}
+    <body data-ng-controller="NoteController as noteCtrl" >
+        <div class="panel panel-primary">
+            <div class="panel-heading panel-primary">
+                Note
+            </div>
+            <div class="panel-body">
+                <textarea ng-model="noteCtrl.messageNote" maxlength="100">{{noteCtrl.messageNote}}</textarea><br/>
+                <button class="btn btn-primary">Enregistrer</button> <button ng-click="noteCtrl.clear()" ng-init="noteCtrl.messageNote" class="btn btn-primary">Clear</button><br/><br/>
+                <div class="alert alert-info">Nombre de caractère restant : {{noteCtrl.count()}}</div>
+                <div class="alert alert-dismissable {{noteCtrl.alert}}">
+                    {{noteCtrl.info}}
+                </div>
+            </div>
         </div>
     </body>
 </html>
