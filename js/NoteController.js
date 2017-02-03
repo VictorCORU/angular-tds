@@ -16,17 +16,21 @@ angular.module("NoteApp").controller("NoteController",function() {
 
     this.count = function(){
         var count =  100 - this.messageNote.length;
-        if(count < 20){
+        if(count <= 20 && count > 10)
             this.status = 2;
-        }
-        else if(count < 10) {
+        else if(count <= 10 && count >0)
             this.status = 3;
-        }
-        else{
+        else
             this.status = 1;
-        }
 
         return count;
 
     };
+
+
+})
+
+angular.module("NoteApp").controller("NoteController", function(){
+
+
 })
