@@ -17,10 +17,13 @@
                 Note
             </div>
             <div class="panel-body">
-                <textarea ng-model="noteCtrl.messageNote" maxlength="100">{{noteCtrl.messageNote}}</textarea><br/>
-                <button class="btn btn-primary">Enregistrer</button> <button ng-click="noteCtrl.clear()" ng-init="noteCtrl.messageNote" class="btn btn-primary">Clear</button><br/><br/>
+                <textarea ng-model="noteCtrl.messageNote" ng-change="noteCtrl.count()" maxlength="100">{{noteCtrl.messageNote}}</textarea><br/><br/>
+
+                <button class="btn btn-primary" ng-click="noteCtrl.save()">Enregistrer</button>
+                <button class="btn btn-primary" ng-click="noteCtrl.clear()">nettoyer</button><br/><br/>
+
                 <div class="alert alert-info">Nombre de caractère restant : {{noteCtrl.count()}}</div>
-                <div class="alert alert-dismissable {{noteCtrl.alert}}">
+                <div class="alert  {{noteCtrl.alert}}" ng-hide="noteCtrl.info == '' ">
                     {{noteCtrl.info}}
                 </div>
             </div>

@@ -6,15 +6,17 @@
 .panel textarea {
     width: 90%;
     height: 250px;
+    background-color: #f6f6f6;
 }
 
-.visible {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 2s linear;
+.alert-warning {
+    transition : 2s;
 }
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
+
+.alert-danger {
+     transition : 2s;
+ }
+
+.alert-info {
+    transition : 2s;
 }
